@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
@@ -16,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Maura Digital | Agencia de marketing digital",
+    default: "Maura Digital | Páginas web con cotizador en Pitalito",
     template: "%s | Maura Digital",
   },
   description:
-    "Agencia de marketing digital que ayuda a negocios a crecer en línea.",
+    "Creamos páginas web con cotizador interactivo y tiendas con cotización para negocios de Pitalito y el Huila. Tu página lista en 2 a 3 días.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

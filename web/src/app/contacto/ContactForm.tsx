@@ -6,6 +6,7 @@ import { sendContact, type ContactState } from "./actions";
 const initialState: ContactState = { ok: false, message: "" };
 
 const fieldClass = "mt-1 w-full rounded border border-black/20 px-3 py-2";
+const helpClass = "block text-sm font-normal text-black/60";
 
 export default function ContactForm() {
   const [state, formAction, pending] = useActionState(
@@ -25,9 +26,9 @@ export default function ContactForm() {
   }
 
   return (
-    <form action={formAction} className="mt-6 flex max-w-xl flex-col gap-4">
+    <form action={formAction} className="mt-8 flex max-w-xl flex-col gap-4">
       <label>
-        Nombre
+        Tu nombre
         <input
           name="nombre"
           type="text"
@@ -38,34 +39,51 @@ export default function ContactForm() {
         />
       </label>
       <label>
-        Correo
+        Nombre de tu negocio
         <input
-          name="email"
-          type="email"
+          name="negocio"
+          type="text"
           required
-          maxLength={200}
-          autoComplete="email"
+          maxLength={100}
+          autoComplete="organization"
           className={fieldClass}
         />
       </label>
       <label>
-        Teléfono (opcional)
+        Tu WhatsApp
+        <span className={helpClass}>Te escribimos por aquí, no te llamamos</span>
         <input
-          name="telefono"
+          name="whatsapp"
           type="tel"
-          maxLength={30}
+          required
+          maxLength={20}
           autoComplete="tel"
           className={fieldClass}
         />
       </label>
       <label>
-        ¿Cómo podemos ayudarte?
-        <textarea
-          name="mensaje"
+        ¿Qué vendes o qué cotizas hoy?
+        <span className={helpClass}>
+          Por ejemplo: vidrios y aluminios, dulces, ferretería
+        </span>
+        <input
+          name="vende"
+          type="text"
           required
-          minLength={10}
-          maxLength={2000}
-          rows={5}
+          maxLength={500}
+          className={fieldClass}
+        />
+      </label>
+      <label>
+        Correo (opcional)
+        <span className={helpClass}>
+          Solo si prefieres que te escribamos por correo
+        </span>
+        <input
+          name="email"
+          type="email"
+          maxLength={200}
+          autoComplete="email"
           className={fieldClass}
         />
       </label>
@@ -81,7 +99,7 @@ export default function ContactForm() {
         disabled={pending}
         className="self-start rounded bg-black px-6 py-3 text-white disabled:opacity-60"
       >
-        {pending ? "Enviando..." : "Enviar"}
+        {pending ? "Enviando..." : "Quiero mi demo"}
       </button>
     </form>
   );
