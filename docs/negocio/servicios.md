@@ -25,11 +25,11 @@ Sin precios publicados. Se cotiza por WhatsApp. _Pendiente decidir si se publica
 
 ## Datos de contacto
 - Ubicación: Maura Digital, Pitalito, Huila.
-- WhatsApp y horario: se configuran en `web/src/lib/site.ts`.
+- WhatsApp: +57 317 870 5913.
+- Horario: lunes a viernes de 7 a.m. a 5 p.m. y sábados de 9 a.m. a 1 p.m.
+- Ambos se configuran en `web/src/lib/site.ts`.
 
 ## Pendientes
-- [ ] Número de WhatsApp.
-- [ ] Horario de atención.
 - [ ] Cuántos productos incluye el Paquete 2 antes de un cobro adicional.
 - [ ] Mostrar foto y nombre en "Quiénes somos".
 - [ ] Publicar precios "desde" o cotizar por WhatsApp.

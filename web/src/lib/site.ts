@@ -1,6 +1,7 @@
 // Datos de contacto del sitio. Completar los pendientes (ver docs/negocio/servicios.md).
-export const WHATSAPP_NUMBER = ""; // Con indicativo, solo dígitos. Ej.: "573001234567"
-export const BUSINESS_HOURS = ""; // Ej.: "Lunes a sábado, 8 a.m. a 6 p.m."
+export const WHATSAPP_NUMBER = "573178705913"; // Con indicativo, solo dígitos
+export const BUSINESS_HOURS =
+  "Lunes a viernes de 7 a.m. a 5 p.m. y sábados de 9 a.m. a 1 p.m.";
 
 export const WHATSAPP_MESSAGE =
   "Hola, Maura Digital. Tengo un negocio de [lo que vendes] y quiero ver cómo se vería mi página con cotizador.";
