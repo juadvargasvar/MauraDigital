@@ -26,9 +26,9 @@ const trabajos = [
   {
     nombre: "Protocolo O.S.F.: página de ventas",
     descripcion:
-      "Una página de ventas para un producto digital, pensada para verse bien en el celular.",
+      "Una página larga, pensada para verse bien en el celular, que presenta una guía digital de alimentación y ejercicio. Lleva a la persona paso a paso: el titular con la propuesta, el problema, el método en tres fases, lo que incluye el paquete con sus bonos, la garantía y el llamado final a pedir el acceso. La guía se entrega de forma gratuita.",
     demuestra:
-      "Diseño de una página que presenta una oferta y lleva al visitante a la compra.",
+      "Una página que presenta una oferta de principio a fin y lleva al visitante a pedir el acceso.",
     url: "https://protocolo-osf.vercel.app/",
   },
 ];
