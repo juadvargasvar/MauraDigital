@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -15,6 +16,8 @@ const trabajos = [
     demuestra:
       "Una micro aplicación con navegación por niveles y seguimiento de progreso.",
     url: "https://pon-tu-idea-en-linea.vercel.app/",
+    imagen: "/portafolio/pon-tu-idea-en-linea.png",
+    alt: "Pantalla de ROOTMAP con la barra de progreso y los niveles del camino",
   },
   {
     nombre: "IA Box Pack: generador de prompts",
@@ -23,6 +26,8 @@ const trabajos = [
     demuestra:
       "Un formulario paso a paso que entrega un resultado personalizado al instante, la misma lógica de un cotizador.",
     url: "https://app-imagenes.vercel.app/",
+    imagen: "/portafolio/app-imagenes.png",
+    alt: "Pantalla de la app IA Box Pack",
   },
   {
     nombre: "Protocolo O.S.F.: página de ventas",
@@ -31,6 +36,8 @@ const trabajos = [
     demuestra:
       "Una página que presenta una oferta de principio a fin y lleva al visitante a pedir el acceso.",
     url: "https://protocolo-osf.vercel.app/",
+    imagen: "/portafolio/protocolo-osf.png",
+    alt: "Pantalla de inicio de Protocolo O.S.F.",
   },
   {
     nombre: "Demo: cotizador de vidrios y aluminios",
@@ -55,7 +62,23 @@ export default function PortafolioPage() {
 
       <ol className="mt-8 grid gap-6">
         {trabajos.map((t, i) => (
-          <li key={t.url} className="rounded border border-black/10 p-6">
+          <li
+            key={t.url}
+            className="overflow-hidden rounded border border-black/10"
+          >
+            {t.imagen && (
+              // Las capturas traen una franja blanca abajo: se recorta con la proporción.
+              <div className="relative aspect-[1200/745] w-full bg-black/5">
+                <Image
+                  src={t.imagen}
+                  alt={t.alt}
+                  fill
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+            )}
+            <div className="p-6">
             <h2 className="text-xl font-semibold">
               {i + 1}. {t.nombre}
               {t.demo && (
@@ -85,6 +108,7 @@ export default function PortafolioPage() {
                 Abrir el trabajo
               </a>
             )}
+            </div>
           </li>
         ))}
       </ol>
