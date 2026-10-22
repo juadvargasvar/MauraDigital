@@ -17,6 +17,7 @@ const trabajos = [
       "Una micro aplicación con navegación por niveles y seguimiento de progreso.",
     url: "https://pon-tu-idea-en-linea.vercel.app/",
     imagen: "/portafolio/pon-tu-idea-en-linea.png",
+    proporcion: "1200 / 745", // recorta la franja blanca de la captura
     alt: "Pantalla de ROOTMAP con la barra de progreso y los niveles del camino",
   },
   {
@@ -27,6 +28,7 @@ const trabajos = [
       "Un formulario paso a paso que entrega un resultado personalizado al instante, la misma lógica de un cotizador.",
     url: "https://app-imagenes.vercel.app/",
     imagen: "/portafolio/app-imagenes.png",
+    proporcion: "836 / 352",
     alt: "Pantalla de la app IA Box Pack",
   },
   {
@@ -37,6 +39,7 @@ const trabajos = [
       "Una página que presenta una oferta de principio a fin y lleva al visitante a pedir el acceso.",
     url: "https://protocolo-osf.vercel.app/",
     imagen: "/portafolio/protocolo-osf.png",
+    proporcion: "1200 / 745", // recorta la franja blanca de la captura
     alt: "Pantalla de inicio de Protocolo O.S.F.",
   },
   {
@@ -47,6 +50,9 @@ const trabajos = [
     demuestra:
       "Un cotizador completo, tal como lo recibiría un negocio de vidrios y aluminios.",
     url: "/portafolio/demo-cotizador",
+    imagen: "/portafolio/cotizador-demo.png",
+    proporcion: "1001 / 376",
+    alt: "Demo del cotizador con producto, medidas y el total de la cotización",
   },
 ];
 
@@ -68,7 +74,10 @@ export default function PortafolioPage() {
           >
             {t.imagen && (
               // Las capturas traen una franja blanca abajo: se recorta con la proporción.
-              <div className="relative aspect-[1200/745] w-full bg-black/5">
+              <div
+                className="relative w-full bg-black/5"
+                style={{ aspectRatio: t.proporcion }}
+              >
                 <Image
                   src={t.imagen}
                   alt={t.alt}
