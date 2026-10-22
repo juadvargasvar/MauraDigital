@@ -59,23 +59,23 @@ const trabajos = [
 export default function PortafolioPage() {
   return (
     <>
-      <h1 className="text-3xl font-bold">Trabajos que puedes abrir y probar</h1>
-      <p className="mt-4 max-w-2xl text-black/70">
+      <h1 className="text-3xl font-bold text-white sm:text-4xl">Trabajos que puedes abrir y probar</h1>
+      <p className="mt-4 max-w-2xl text-white/75">
         Estas son aplicaciones y páginas que hemos construido. No son
         cotizadores, pero usan la misma idea: la persona responde unos datos y la
         página le entrega un resultado al instante.
       </p>
 
-      <ol className="mt-8 grid gap-6">
+      <ol className="mt-8 grid gap-8">
         {trabajos.map((t, i) => (
           <li
             key={t.url}
-            className="overflow-hidden rounded border border-black/10"
+            className="overflow-hidden rounded-xl border border-white/10 bg-white/5"
           >
             {t.imagen && (
               // Las capturas traen una franja blanca abajo: se recorta con la proporción.
               <div
-                className="relative w-full bg-black/5"
+                className="relative w-full bg-white/5"
                 style={{ aspectRatio: t.proporcion }}
               >
                 <Image
@@ -87,23 +87,23 @@ export default function PortafolioPage() {
                 />
               </div>
             )}
-            <div className="p-6">
+            <div className="p-8">
             <h2 className="text-xl font-semibold">
               {i + 1}. {t.nombre}
               {t.demo && (
-                <span className="ml-2 rounded bg-amber-100 px-2 py-0.5 align-middle text-xs font-medium text-amber-900">
+                <span className="ml-2 rounded bg-amber-400/15 px-2 py-0.5 align-middle text-xs font-medium text-amber-200">
                   Demostración
                 </span>
               )}
             </h2>
-            <p className="mt-2 text-black/70">{t.descripcion}</p>
-            <p className="mt-2 text-black/70">
+            <p className="mt-2 text-white/75">{t.descripcion}</p>
+            <p className="mt-2 text-white/75">
               <span className="font-medium">Qué demuestra:</span> {t.demuestra}
             </p>
             {t.url.startsWith("/") ? (
               <Link
                 href={t.url}
-                className="mt-4 inline-block font-medium underline"
+                className="mt-6 inline-block font-medium text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
               >
                 Probar la demo
               </Link>
@@ -112,7 +112,7 @@ export default function PortafolioPage() {
                 href={t.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block font-medium underline"
+                className="mt-6 inline-block font-medium text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
               >
                 Abrir el trabajo
               </a>
@@ -122,7 +122,7 @@ export default function PortafolioPage() {
         ))}
       </ol>
 
-      <section className="mt-12 rounded bg-black/5 p-8">
+      <section className="mt-20 rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-violet-500/15 to-cyan-400/10 p-8 sm:p-12">
         <p className="max-w-2xl text-lg">
           Tu negocio puede ser el siguiente trabajo de esta lista. Escríbenos por
           WhatsApp y te mostramos cómo se vería tu página con cotizador.

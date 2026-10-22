@@ -35,7 +35,7 @@ const cop = (n: number) =>
     maximumFractionDigits: 0,
   }).format(n);
 
-const fieldClass = "mt-1 w-full rounded border border-black/20 px-3 py-2";
+const fieldClass = "mt-1 w-full rounded-lg border border-white/20 bg-white/5 px-3 py-2 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40";
 
 export default function Quoter() {
   const [producto, setProducto] = useState(PRODUCTOS[0].id);
@@ -156,6 +156,7 @@ export default function Quoter() {
         <label className="flex items-center gap-2">
           <input
             type="checkbox"
+            className="accent-cyan-400"
             checked={instalacion}
             onChange={(e) => setInstalacion(e.target.checked)}
           />
@@ -165,12 +166,12 @@ export default function Quoter() {
 
       <section
         aria-live="polite"
-        className="rounded border border-black/10 bg-black/5 p-6"
+        className="rounded-xl border border-white/10 bg-white/5 p-8"
       >
         <h2 className="text-xl font-semibold">Tu cotización</h2>
         {resultado ? (
           <>
-            <dl className="mt-4 space-y-2 text-sm">
+            <dl className="mt-4 space-y-3 text-sm">
               <div className="flex justify-between gap-4">
                 <dt>Área por unidad</dt>
                 <dd>{resultado.area.toFixed(2)} m²</dd>
@@ -196,7 +197,7 @@ export default function Quoter() {
                 </div>
               )}
             </dl>
-            <p className="mt-4 flex justify-between gap-4 border-t border-black/20 pt-4 text-lg font-bold">
+            <p className="mt-4 flex justify-between gap-4 border-t border-white/20 pt-4 text-lg font-bold">
               <span>Total</span>
               <span>{cop(resultado.total)}</span>
             </p>
@@ -205,13 +206,13 @@ export default function Quoter() {
               {...(hasWhatsapp
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className="mt-6 inline-block rounded bg-green-600 px-6 py-3 font-medium text-white hover:bg-green-700"
+              className="mt-6 inline-block rounded-lg bg-green-600 px-6 py-3 font-medium text-white hover:bg-green-700"
             >
               Enviar esta cotización por WhatsApp
             </a>
           </>
         ) : (
-          <p className="mt-4 text-sm text-black/70">
+          <p className="mt-4 text-sm text-white/75">
             Escribe medidas entre {MIN_CM} y {MAX_CM} cm y una cantidad entre 1 y
             100 para ver el precio.
           </p>
