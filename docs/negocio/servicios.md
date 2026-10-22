@@ -34,4 +34,6 @@ Sin precios publicados. Se cotiza por WhatsApp. _Pendiente decidir si se publica
 - [ ] Mostrar foto y nombre en "Quiénes somos".
 - [ ] Publicar precios "desde" o cotizar por WhatsApp.
 - [ ] Portafolio: revisar la descripción del trabajo 3 (Protocolo O.S.F.); confirmar si alguno fue para un cliente y si acepta mostrarse; revisar que el trabajo 3 no prometa resultados médicos que no se puedan respaldar.
-- [ ] Portafolio: sumar un cuarto trabajo, una demo de cotizador de vidrios y aluminios marcada como demostración.
+
+## Portafolio
+El cuarto trabajo es una demo de cotizador de vidrios y aluminios (`/portafolio/demo-cotizador`). Sus precios y reglas son de ejemplo y están marcados como demostración; viven en `web/src/app/portafolio/demo-cotizador/Quoter.tsx`.

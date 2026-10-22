@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
@@ -31,6 +32,15 @@ const trabajos = [
       "Una página que presenta una oferta de principio a fin y lleva al visitante a pedir el acceso.",
     url: "https://protocolo-osf.vercel.app/",
   },
+  {
+    nombre: "Demo: cotizador de vidrios y aluminios",
+    demo: true,
+    descripcion:
+      "Una demostración de lo que hacemos: eliges el producto y el tipo de vidrio, escribes las medidas y la cantidad, y ves el precio al instante, con descuento por cantidad e instalación opcional. Al final, la cotización se envía armada por WhatsApp. Los precios son de ejemplo.",
+    demuestra:
+      "Un cotizador completo, tal como lo recibiría un negocio de vidrios y aluminios.",
+    url: "/portafolio/demo-cotizador",
+  },
 ];
 
 export default function PortafolioPage() {
@@ -48,19 +58,33 @@ export default function PortafolioPage() {
           <li key={t.url} className="rounded border border-black/10 p-6">
             <h2 className="text-xl font-semibold">
               {i + 1}. {t.nombre}
+              {t.demo && (
+                <span className="ml-2 rounded bg-amber-100 px-2 py-0.5 align-middle text-xs font-medium text-amber-900">
+                  Demostración
+                </span>
+              )}
             </h2>
             <p className="mt-2 text-black/70">{t.descripcion}</p>
             <p className="mt-2 text-black/70">
               <span className="font-medium">Qué demuestra:</span> {t.demuestra}
             </p>
-            <a
-              href={t.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block font-medium underline"
-            >
-              Abrir el trabajo
-            </a>
+            {t.url.startsWith("/") ? (
+              <Link
+                href={t.url}
+                className="mt-4 inline-block font-medium underline"
+              >
+                Probar la demo
+              </Link>
+            ) : (
+              <a
+                href={t.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block font-medium underline"
+              >
+                Abrir el trabajo
+              </a>
+            )}
           </li>
         ))}
       </ol>
