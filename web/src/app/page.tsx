@@ -47,8 +47,8 @@ export default function Home() {
       </section>
 
       <section className="mt-20">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">Dos formas de tener tu cotizador</h2>
-        <div className="mt-4 grid gap-8 sm:grid-cols-2">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl">Tres formas de tener tu cotizador</h2>
+        <div className="mt-4 grid gap-8 lg:grid-cols-3">
           <div className="rounded-xl border border-white/10 bg-white/5 p-8">
             <h3 className="text-lg font-semibold">Página con cotizador</h3>
             <p className="mt-2 text-white/75">
@@ -62,6 +62,19 @@ export default function Home() {
               Para negocios con catálogo, como una dulcería. Tu cliente arma su
               pedido, ve el total y te lo envía por WhatsApp.
             </p>
+          </div>
+          <div className="rounded-xl border border-cyan-400/40 bg-gradient-to-br from-violet-500/15 to-cyan-400/10 p-8">
+            <span className="rounded-full bg-cyan-400/20 px-3 py-1 text-xs font-semibold text-cyan-300">
+              Recomendado
+            </span>
+            <h3 className="mt-3 text-lg font-semibold">Cotizador + Anuncios en Meta</h3>
+            <p className="mt-2 text-white/75">
+              Tu cotizador más anuncios en Facebook e Instagram que llevan
+              clientes nuevos a tu página. Tú recibes los pedidos por WhatsApp.
+            </p>
+            <Link href="/servicios" className="mt-4 inline-block text-cyan-300 underline">
+              Ver qué incluye
+            </Link>
           </div>
         </div>
       </section>
